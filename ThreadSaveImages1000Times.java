@@ -1,5 +1,7 @@
 package optimisation;
 
+import java.io.File;
+
 import org.opencv.core.Mat;
 import org.opencv.imgcodecs.*;
 
@@ -16,6 +18,11 @@ public class ThreadSaveImages1000Times extends Thread {
 		for(int i = 0; i < 1000/nbThreads ; i++) {
 			Imgcodecs.imwrite("test"+ Thread.currentThread().getId() +".png",img);
 		}
+		 File file = new File("test"+ Thread.currentThread().getId() +".png");
+         
+	     file.delete();
+	     
+	     
 	}
 
 	
